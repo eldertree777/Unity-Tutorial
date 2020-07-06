@@ -1,0 +1,35 @@
+assest 모든 파일이 들어간폴더 root
+기즈모
+
+pivot 실제오브젝트에 방향도구 표시
+center 오브젝트 센터에 표시
+
+global 전체의 좌표
+local 오브젝트의 좌표
+
+클래스상속방식 vs 컴포넌트방식
+
+컴포넌트 구조
+MonoBehaviour  : Super Component
+- 유니티의 통제를 받는다
+- 유니티의 이벤트 메세지 감지
+
+브로드 캐스팅 : 메세지를 무차별적으로 많이 보내는 것
+
+유니티 이벤트 메서드 : 이름만 맞추면 해당타이밍에 자동구현
+메세지/브래드 캐스팅 시스템 :
+복잡한 참조관계를 끊고 라이프 싸이클을 스스로 관리할수있게함
+
+data Type
+var : 할당값을 기준으로 타입을 결정
+
+Rigidbody : 물리적인 컴포넌트
+.AddForce(x,y,z)
+Debug.log()
+Input.GetKey(KeyCode.D)
+
+Update() : fps마다 실행
+
+//발사 기능 - fire - 마우스 왼쪽버튼
+//if(입력("fire"))
+// // 총알을 발사
