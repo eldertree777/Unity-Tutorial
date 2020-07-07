@@ -24,7 +24,7 @@
 ## 유니티 프로그래밍 1
     - var : 할당값을 기준으로 타입을 결정
 
-## 유니티 프로그래밍 2
+## 유니티 프로그래밍 2 + Sokovan
     1.
         - Rigidbody : 물리적인 컴포넌트
         - .AddForce(x,y,z)
@@ -49,3 +49,20 @@
     >//발사 기능 - fire - 마우스 왼쪽버튼
     >//if(입력("fire"))
     >// // 총알을 발사
+
+    4.
+        - Time.deltaTime 은  1/화면깜빡이는 시간
+        - transform 변수는 유니티에서 지원
+        - tag
+    5. 
+        - OnTriggerEnter(Collider other) : 트리거 콜리더 충돌시
+        - OnCollisionEnter(Collision other) : 일반콜리더와 충돌 발생시
+        - OnTriggerExit(Collider other) : 떨어질때
+        - OnTriggerStay(Collider other) : 머무르는 동안
+    6. 
+        -GameManager
+
+    7. UI
+        - Canvas : UI Main Object
+        - EventSystem : 입력을 받아 UI에 전달
+        - winUI.SetActive(true); : 활성화

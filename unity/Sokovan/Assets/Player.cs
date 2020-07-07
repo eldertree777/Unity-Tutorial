@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+
+    public GameManager gameManager;
     public float speed = 10f;
     private Rigidbody playerRigidbody;
     // Start is called before the first frame update
@@ -20,6 +22,10 @@ public class Player : MonoBehaviour
     // console 30fps
     void Update()
     {
+        if(gameManager.isGameOver == true){
+            return;
+        }
+
         // 유저 입력
         // if(Input.GetKey(KeyCode.W)){
         //     playerRigidbody.AddForce(0,0,speed);           
