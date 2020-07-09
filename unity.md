@@ -82,7 +82,7 @@
         - 하위 오브젝트는 상위 오브젝트 좌표계의 기준으로 제어된다.
         - transform.localPosition = new Vector3();
         - transform.rotation = Quaternion.Euler(new Vector3());
-        - 쿼터니언(x,y,z,w) 어려움 -> Vector3를 사용하여 사용
+        - 쿼터니언(x,y,z,w) 어려움 -> Vector3를 사용하여 사용  *짐벌락
         - Quaternion newRotation = Quaternion.Euler(new Vector3());
         - Quaternion.LookRotation(direction)
         - Quaternion.Lerp(aRotation,bRotation, 0.5f(퍼센티지));
@@ -90,3 +90,34 @@
         - transform.Rotate(new Vector());
         - Quaternion.eulerAngles => Vectoer3 반환 
         - 각도의 합 => Quaternion*Quaternion;
+
+    2. 인스턴스
+        - Instantiate(target, spawnPosition, spawnRotation) : target 생성
+        - GameObject var = Instantiate(); 
+            > var.GetComponent<Rigidbody>().AddForce();
+            vs
+
+        - Rigidbody var = Instantiate();
+            > var.AddForce();
+        - 인스턴스화를 함으로써 게임중 오브젝트를 계속 생성하거나 사용함
+
+    3. 오버로드
+        - 함수의 중복
+
+    4. 정적 변수,함수
+        - Static ex) 하나의 클래스의 Static int count 변수 
+        - void Awake() : void Start()실행 이전 실행하는 함수
+    
+    5. 리스트
+        - Random.Range(start,End) : Start~End중 랜덤값
+        - Input.GetmouseButtondown(0) 좌클릭 1은 우클릭
+        - List<int> scores = new List<int>();
+        - scores.Add(); .RemoveAt(Index) .Remove(value)
+    
+    6. *싱글톤 : 디자인패턴
+        - 자기자신클래스에 자신의 정적인스턴스를 가짐
+        - 오브젝트 단 하나만 부여해야함
+        - instance = this;
+        - instance = FindObjectOfType<value>(); 씬상에 모든오브젝트를 뒤져서 value를 찾음
+        - instance = GameObject.AddComponent<ScoreManager>(); 지연생성
+        - Destroy()
