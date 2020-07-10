@@ -121,3 +121,17 @@
         - instance = FindObjectOfType<value>(); 씬상에 모든오브젝트를 뒤져서 value를 찾음
         - instance = GameObject.AddComponent<ScoreManager>(); 지연생성
         - Destroy()
+
+    7. 코루틴 -> 병렬처리
+        - 유니티 고유기능
+        - 코드에 지정시간동안 대기시킴
+        - IEnumerator ... {
+            yield return new WaitForSeconds(0.01f);
+            } // 대기시간을 갖는다.
+        - StartCoroutine(FadeIn())
+        - StartCoroutine("FadeIn") 인위적으로 멈추는게 가능
+        -   StopCoroutine("FadeIn")
+        - 코루틴은 비동기 방식이다
+        - 동시 여러작업 할시에 사용함
+    
+    8. balling
