@@ -135,3 +135,7 @@
         - 동시 여러작업 할시에 사용함
     
     8. balling
+        - enum :
+        >private enum RorateState{ Idle,Vertical,Horizontal,Ready }
+        >private RorateState state = RorateState.Idle;
+        - Edit - Project Setting - Axes
