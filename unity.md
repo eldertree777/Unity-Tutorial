@@ -139,3 +139,23 @@
         >private enum RorateState{ Idle,Vertical,Horizontal,Ready }
         >private RorateState state = RorateState.Idle;
         - Edit - Project Setting - Axes
+        - Destroy(gameObject, lifetime) // lifetime후 gameObject파괴
+        - explosionParticle.transform.parent = null; //부모 없앰
+        - explosionParticle.Play();
+        - Destroy(explosionParticle.gameObject, explosionParticle.duration); //duration 지연시간
+        - ParticleSystem instance = Instantiate(explosionParticle,transform.position,transform.rotation); // 새로 찍어 생성
+        - gameObject.SetActive(false); <-> gameObject.Play() ??
+        - Tag or Layer 오브젝트 구별 방법
+        - tag : 일대일 layer : 다수
+        - LayerMask
+        -  Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius, whatIsProb);
+         // 정해진위치의 반지름만큼 겹치는 물체의 레이어마스크필터링하여 배열로 반환
+        
+        - Vector3.magnitude : Vector3 -> 길이
+        - damage = Mathf.Max(0, damage); // 0~damage만 반환
+        - targetRigidbody.AddExplosionForce(explosionForce,transform.position,explosionRadius); 
+            // 폭팔물의 위치,힘,반경을 입력받아 게산되어 스스로 튕기게하는 함수
+        -firePos.forward; //앞쪽을 Vector3로 변환
+        - Quaternion.identity == Quaternion(new Vector(0,0,0))
+        - ballshooter.enabled = true;
+        - Random.Range(startVal, endVal)
