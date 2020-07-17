@@ -134,7 +134,8 @@
         - 코루틴은 비동기 방식이다
         - 동시 여러작업 할시에 사용함
     
-    8. balling
+## 볼링
+    1.
         - enum :
         >private enum RorateState{ Idle,Vertical,Horizontal,Ready }
         >private RorateState state = RorateState.Idle;
@@ -159,3 +160,9 @@
         - Quaternion.identity == Quaternion(new Vector(0,0,0))
         - ballshooter.enabled = true;
         - Random.Range(startVal, endVal)
+    2.
+        - 프로퍼티 get , set
+        - cam = GetComponentInChildren<Camera>(); //자식 컴포넌트까지 찾음
+        - Vector3 smoothPosition = Vector3.SmoothDamp(transform.position, targetPosition, ref lastMovingVelocity , smoothTime); //시작 위치, 목표 위치, 중간참고위치 , 속도시간 천천히 이동
+        - *SmoothDamp 
+        - void FixedUpdate() : 프레임드랍 방지 Update()
