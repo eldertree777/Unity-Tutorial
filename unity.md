@@ -166,3 +166,13 @@
         - Vector3 smoothPosition = Vector3.SmoothDamp(transform.position, targetPosition, ref lastMovingVelocity , smoothTime); //시작 위치, 목표 위치, 중간참고위치 , 속도시간 천천히 이동
         - *SmoothDamp 
         - void FixedUpdate() : 프레임드랍 방지 Update()
+    
+    3.
+        - PlayerPrefs.SetInt("BestScore", score) 파일에 키값을통해 데이터 저장
+        - UnityEvent onReset; 선언 -> onReset.Invoke(); 발동!
+
+    4. 
+        -Audio Mixer
+    
+    5. 
+        - OnDestroy(){} : 자신오브젝트가 파괴될때 발동 

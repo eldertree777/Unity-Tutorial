@@ -65,9 +65,11 @@
      <Compile Include="Assets\Script\Ball.cs" />
      <Compile Include="Assets\Script\BallShooter.cs" />
      <Compile Include="Assets\Script\CamFollow.cs" />
+     <Compile Include="Assets\Script\GameManager.cs" />
      <Compile Include="Assets\Script\Prop.cs" />
      <Compile Include="Assets\Script\ShooterRotator.cs" />
      <Compile Include="Assets\Script\SpwanGenerator.cs" />
+     <None Include="Assets\Noto_Sans_KR\OFL.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />

@@ -11,6 +11,11 @@ public class Ball : MonoBehaviour
     public float explosionForce = 1000f;
     public float lifeTime = 10f;
     public float explosionRadius = 20f;
+   
+    private void OnDestroy()
+    {
+        GameManager.instance.OnBallDestory();
+    }
 
     void Start()
     {
@@ -36,6 +41,8 @@ public class Ball : MonoBehaviour
         explosionParticle.transform.parent = null; //부모 없앰
         explosionParticle.Play();
         explosionAudio.Play();
+
+        //GameManager.instance.OnBallDestory();//싱글톤
 
         Destroy(explosionParticle.gameObject, explosionParticle.duration); //러닝타임
         Destroy(gameObject);
