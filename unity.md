@@ -176,3 +176,21 @@
     
     5. 
         - OnDestroy(){} : 자신오브젝트가 파괴될때 발동 
+
+# 유니티프로그래밍 고급
+
+## 유니티 프로그래밍 중급2
+    1.  레이캐스트
+        -Camera.ViewportToWorldPoint(new Vector3()) :
+        카메라에서 Vector3 까지를 Vector3로 반환
+        - Physics.Raycast(rayOrigin, rayDir,out Raycasthit, distance , LayerMask) :
+        위치에서 방향으로 거리만큼 해당 레이어 오브젝트와 만나면 true반환 발생된 오브젝트를 out Raycasthit로 정보를 보냄
+        - Debug.DrawRay(rayOrigin, rayDir * 100f, Color.green)
+        위치에서 방향만큼 색을 표시해줌
+        -Raycasthit : Raycast로 발생하는 다른 오브젝트 정보 저장하는 리스트
+        - hit.collider.gameObject.name  충돌오브젝트 이름
+        - hit.nomal hit.distance
+        - Ray ray = new Ray(rayOrigin, rayDir);
+        - moveTarget.GetComponent<Renderer>().material.color = Color.white;
+    
+    2. 상속
