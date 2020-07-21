@@ -194,3 +194,16 @@
         - moveTarget.GetComponent<Renderer>().material.color = Color.white;
     
     2. 상속
+        - public class Subclass : SuperClass{}
+        - 접근 지정자 public private protected: 자식만허용
+    
+    3. 다형성
+
+    4. 오버라이드 
+        - virtual void Rotate()
+        - override void Rotate() {base.Rotate();}
+
+    5. 인터페이스
+        - FindObjectOfType<Player>(); 씬상에서 플레이어를 찾아서 
+        - interface IItem
+        - IItem item = other,GetComponent<IItem>();
