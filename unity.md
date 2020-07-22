@@ -207,3 +207,23 @@
         - FindObjectOfType<Player>(); 씬상에서 플레이어를 찾아서 
         - interface IItem
         - IItem item = other,GetComponent<IItem>();
+
+    6. 추상클래스
+        - abstract
+
+    7. 프로퍼티
+        - int point{
+            get{
+                return m_point;
+            }
+            set{
+                if(value <0) { m_point=0;}
+            }
+        }
+## 유니티 프로그래밍 고급
+    1. 유니티 이벤트
+        - SceneManager.LoadScene(0) 씬 재실행
+        - Invoke("함수이름", 지연시간); 
+        - using UnmityEngine.Events;
+        - UnityEvent onPlayerDead;
+        - inPlayerDead.Invoke();
