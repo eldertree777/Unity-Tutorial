@@ -227,3 +227,24 @@
         - using UnmityEngine.Events;
         - UnityEvent onPlayerDead;
         - inPlayerDead.Invoke();
+    2. 델리게이트
+        - delegate float Calculate(float a, float b);
+        - Calculate onCalculate;
+        - event Calculate onCalculate;
+        - onCalculate = Sum; 등록
+        - onCalculate += Subtract;
+        - onCalculate = Sum(); 실행
+        - onCalculate(); 실행
+    3. 
+        - 커플링 : 두 오프젝트가 얼마나 연결된정도
+        - publisher : 이벤트를 작동하는 친구
+        - subscriber : 이벤트 받기 대기중인 친구
+    
+    4. 액션 + 람다
+        - delegate -> Action: 반환값이없는 입력없는 델리게이트타입
+        - 람다 : onSend += man => Debug.Log(" Assaingate " + man)
+        - = (string man) => {};
+    
+    5. 제네릭
+        - public void function<T>(T var){Debug.Log(T);}
+        - 
