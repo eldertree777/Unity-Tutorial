@@ -244,7 +244,41 @@
         - delegate -> Action: 반환값이없는 입력없는 델리게이트타입
         - 람다 : onSend += man => Debug.Log(" Assaingate " + man)
         - = (string man) => {};
+        - get => health;
+        - set => health = value;
     
     5. 제네릭
         - public void function<T>(T var){Debug.Log(T);}
-        - 
+
+# 애니메이션
+    1.  애니메이션 클립
+        - Animation 
+    2. 애니메이터 컨트롤러 + FSM
+        - Controller
+        - Animator.SetTrigger("Jump");
+        - float vertocalInput = Input.GetAxis("Vertical");
+        - anim.SetFloat("Speed", vertocalInput);
+    3. 애니메이터 파라미터
+        - Entry state ,  anystate
+    4. 트랜지션
+        -Has Exit Time : 애니메이션 변화사이 텀의 여부
+        - Transition Duration : 
+    5. 블랜드 트리
+        -Blend Tree : 애니메이션의 조합
+    6. 루트모션+ 아바타
+        -Apply Root Motion
+    7. 애니메이터 레이어
+        - 다양한레이어를 사용하여 애니메이션을 덮을수있다
+        - Layer Mask
+    8. IK Inverse Kinematic
+        - 애니메이션을 플레이할때 관절의 위치를 역계산
+        - ex)
+        >anim.SetIKPositionWeight(AvatarIKGoal.LeftHand,1.0f);
+        >anim.SetIKRotationWeight(AvatarIKGoal.LeftHand,1.0f);
+
+        >anim.SetIKPosition(AvatarIKGoal.LeftHand, target.position);
+        >anim.SetIKRotation(AvatarIKGoal.LeftHand, target.rotation);
+
+        >anim.SetLookAtWeight(1.0f);
+        >anim.SetLookAtPosition(target.position);
+## UGUI
