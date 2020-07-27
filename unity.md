@@ -273,12 +273,74 @@
     8. IK Inverse Kinematic
         - 애니메이션을 플레이할때 관절의 위치를 역계산
         - ex)
-        >anim.SetIKPositionWeight(AvatarIKGoal.LeftHand,1.0f);
-        >anim.SetIKRotationWeight(AvatarIKGoal.LeftHand,1.0f);
+        > anim.SetIKPositionWeight(AvatarIKGoal.LeftHand,1.0f);
+        > anim.SetIKRotationWeight(AvatarIKGoal.LeftHand,1.0f);
 
-        >anim.SetIKPosition(AvatarIKGoal.LeftHand, target.position);
-        >anim.SetIKRotation(AvatarIKGoal.LeftHand, target.rotation);
+        > anim.SetIKPosition(AvatarIKGoal.LeftHand, target.position);
+        > anim.SetIKRotation(AvatarIKGoal.LeftHand, target.rotation);
 
-        >anim.SetLookAtWeight(1.0f);
-        >anim.SetLookAtPosition(target.position);
+        > anim.SetLookAtWeight(1.0f);
+        > anim.SetLookAtPosition(target.position);
 ## UGUI
+    1. Canvas
+        - 캔버스는 게임화면에 비례합니다
+        - UI오브젝트의 프레임
+        - Screen Space
+    2. anchor pivot position
+        - Anchor : UI요소의 원점(0,0) 위치를 정한다
+        - Pivot : UI요소 내부의 기준점을 정한다
+        - Position : 앵커와 피벗을 기준으로 결정한 좌표
+        
+    3. UI 비주얼 컴포넌트
+
+    4. 이미지 컴포넌트
+        - Sprite
+        - Image Type
+
+    5. Raw 이미지
+        - Texture
+
+    6. 마스크
+
+    7. 그림자 + 외곽선
+        - Shadow Outline 컴포넌트
+
+    --- 비주얼 컴포넌트
+
+    8. 인터렉션 컴포넌트 + selectable
+        - 터지 상호 작용
+        - selectable 베이스로 구성
+        - EventSystem이 관리
+
+    9. 버튼
+        - Random.ColorHSV() : 랜덤 컬러
+
+    10. 토글
+    11. 토글그룹
+    12. 슬라이더
+    13. 드롭다운
+    14. 스크롤뷰
+    15. 입력 필드
+    16. 레이아웃 컴포넌트 + 수직 정렬
+        - Vertical Layout Group 컴포넌트
+
+    17. 수평정렬   
+        - Horizontal Layout Group 컴포넌트
+
+    18. 그리드 정렬 : 바둑판
+        - Grid Layout Group 컴포넌트
+
+    19. 레이아웃 앨리먼트
+        - Layout Element 컴포넌트
+
+    20. 이벤트시스템 + UI인터렉션 원리
+        - 이벤트시스템 원리 : 클릭시 RayCast 빔발사됨
+        - Event Trigger
+        - Using Unity.EventSystem;
+         IPointerEnterHandler -> void OnPointEnter(PointerEventData data)
+        
+# Unity Document
+[Link](https://docs.unity3d.com/Manual/index.html)
+
+# FPS Game
+[참조 Github](https://github.com/IJEMIN/Unity-TPS-Sample)
