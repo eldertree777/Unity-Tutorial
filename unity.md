@@ -344,3 +344,13 @@
 
 # FPS Game
 [참조 Github](https://github.com/IJEMIN/Unity-TPS-Sample)
+
+    1. 라이트닝
+        - Global Illumination : 직접조명 + 간접조명
+        - Realtime Global Illumination
+        - Baked Global Illumination
+
+    2. Cinemachine
+        - 카메라 연출 구현
+        - Brain + Virtual 
+        - FreeLook : Virtual 확장한 카메라
