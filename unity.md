@@ -164,7 +164,7 @@
         - 프로퍼티 get , set
         - cam = GetComponentInChildren<Camera>(); //자식 컴포넌트까지 찾음
         - Vector3 smoothPosition = Vector3.SmoothDamp(transform.position, targetPosition, ref lastMovingVelocity , smoothTime); //시작 위치, 목표 위치, 중간참고위치 , 속도시간 천천히 이동
-        - *SmoothDamp 
+        - *SmoothDamp : 시작 목표 까지 천천히 이동
         - void FixedUpdate() : 프레임드랍 방지 Update()
     
     3.
@@ -258,6 +258,7 @@
         - Animator.SetTrigger("Jump");
         - float vertocalInput = Input.GetAxis("Vertical");
         - anim.SetFloat("Speed", vertocalInput);
+        // 파라미터값  애니메이션이름 , 정도 퍼센티지
     3. 애니메이터 파라미터
         - Entry state ,  anystate
     4. 트랜지션
@@ -354,3 +355,14 @@
         - 카메라 연출 구현
         - Brain + Virtual 
         - FreeLook : Virtual 확장한 카메라
+        - Cinemachine collider 
+    
+    3. 
+        - Character Controller : Rigidbody가 요구하지않는 컨트롤러
+        - Vector2.sqrMagnitude : 백터길이
+        - Vector2.normalized : 백터길이 1로 만듬
+        -  [Range(0.01f, 1f)] public float airControlPercent; //공중에 떠있는동안 이동조작
+        - characterController.isGrounded : 바닥에 닿아있는지 여부 
+        - [Range(0f, 10f)] public float maxSpread = 3f; 슬라이더
+    
+    4.
