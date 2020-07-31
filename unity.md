@@ -366,3 +366,6 @@
         - [Range(0f, 10f)] public float maxSpread = 3f; 슬라이더
     
     4.
+        - PlayOneSho : Play() 와 다르게 연속해서 클립 재생
+        - bulletLineRenderer.SetPosition(0, fireTransform.position);
+            bulletLineRenderer.SetPosition(1, hitPosition);
