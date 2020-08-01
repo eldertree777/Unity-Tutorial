@@ -369,3 +369,13 @@
         - PlayOneSho : Play() 와 다르게 연속해서 클립 재생
         - bulletLineRenderer.SetPosition(0, fireTransform.position);
             bulletLineRenderer.SetPosition(1, hitPosition);
+        - 정규분포 랜덤값 생성  
+            public static float GedRandomNormalDistribution(float mean(평균값), float standard(표준편차))
+            {
+                var x1 = Random.Range(0f, 1f);
+                var x2 = Random.Range(0f, 1f);
+               return mean + standard * (Mathf.Sqrt(-2.0f * Mathf.Log(x1)) * Mathf.Sin(2.0f * Mathf.PI * x2));
+            }
+        -Quaternion.AngleAxis(yError,Vector3.up) : y축을 기준으로 yError만큼 회전
+        - UIManager
+        - [SerializeField] private 지만 inspect창에서 할당가능하게함

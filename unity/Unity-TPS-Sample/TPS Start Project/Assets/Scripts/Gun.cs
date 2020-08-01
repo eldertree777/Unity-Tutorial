@@ -80,15 +80,63 @@ public class Gun : MonoBehaviour
         if(state == State.Ready && Time.time >= lastFireTime + timeBetFire)
         {
             var fireDirection = aimTarget - fireTransform.position;
+
+            var xError = Utility.GetRandomNormalDistribution(0f, currentSpread);
+            var yError = Utility.GetRandomNormalDistribution(0f, currentSpread);
+
+            fireDirection = Quaternion.AngleAxis(yError, Vector3.up) * fireDirection;
+            fireDirection = Quaternion.AngleAxis(xError, Vector3.right) * fireDirection;
+
+            currentSpread += 1f / stability; //반동
+
             lastFireTime = Time.time;
             Shot(fireTransform.position, fireDirection);
+
+            return true;
         }
         return false;
     }
     
     private void Shot(Vector3 startPoint, Vector3 direction)
     {
-        
+        RaycastHit hit;
+        Vector3 hitPosition= Vector3.zero;
+        if(Physics.Raycast(startPoint, direction, out hit, fireDistance, ~excludeTarget))
+        {
+            var target = hit.collider.GetComponent<IDamageable>();
+
+            if (target != null)
+            {
+                DamageMessage damageMessage;
+                damageMessage.damager = gunHolder.gameObject;
+                damageMessage.amount = damage;
+                damageMessage.hitPoint = hit.point; // 타격위치
+                damageMessage.hitNormal = hit.normal; //방향
+
+                target.ApplyDamage(damageMessage);
+                
+                hitPosition = hit.point;
+            }
+            else
+            {
+                EffectManager.Instance.PlayHitEffect(hit.point, hit.normal, hit.transform);            
+            }
+
+            hitPosition = hit.point;
+
+        }
+        else
+        {
+            hitPosition = startPoint + direction * fireDistance;
+        }
+
+            StartCoroutine(ShotEffect(hitPosition));
+
+            magAmmo--;
+            if(magAmmo <= 0)
+            {
+                state = State.Empty;
+            }
     }
 
     private IEnumerator ShotEffect(Vector3 hitPosition)
@@ -108,16 +156,35 @@ public class Gun : MonoBehaviour
     
     public bool Reload()
     {
-        return false;
+        if(state == State.Reloading || ammoRemain <=0 || magAmmo >= magCapacity)
+        {
+            return false;
+        }
+
+        StartCoroutine(ReloadRoutine());
+
+        return true;
     }
 
     private IEnumerator ReloadRoutine()
     {
-        yield return null;
+        state = State.Reloading;
+        gunAudioPlayer.PlayOneShot(reloadClip); //클립재생
+
+        yield return new WaitForSeconds(reloadTime);
+
+        var ammoToFill = Mathf.Clamp(magCapacity - magAmmo, 0 ,ammoRemain);
+        // min ~ max값을 지정하여 현재값을 짤라서 리턴
+
+        magAmmo += ammoToFill; 
+        ammoRemain -= ammoToFill;
+
+        state = State.Ready;
     }
 
     private void Update()
     {
-
+        currentSpread = Mathf.Clamp(currentSpread, 0f, maxSpread);
+        currentSpread = Mathf.SmoothDamp(currentSpread, 0f, ref currentSpreadVelocity, 1f / restoreFromRecoilSpeed);
     }
 }
