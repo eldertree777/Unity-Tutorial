@@ -379,3 +379,8 @@
         -Quaternion.AngleAxis(yError,Vector3.up) : y축을 기준으로 yError만큼 회전
         - UIManager
         - [SerializeField] private 지만 inspect창에서 할당가능하게함
+    
+    5. 네비게이션
+        - 적 인공지능 
+        - NavMeshAgent 컴포넌트
+        - using UnityEngine.AI;
