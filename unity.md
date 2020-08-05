@@ -384,3 +384,7 @@
         - 적 인공지능 
         - NavMeshAgent 컴포넌트
         - using UnityEngine.AI;
+        - desiredVelocity : 현재원하는 속도값
+        -  var spawnPosition = Utility.GetRandomPointOnNavMesh(playerTransform.position, maxDistance, NavMesh.AllAreas);
+        //NavMesh위 랜덤 좌표 가져옴
+        - readonly

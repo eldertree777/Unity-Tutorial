@@ -616,6 +616,7 @@ GameObject:
   - component: {fileID: 2395873304201272445}
   - component: {fileID: 247591038}
   - component: {fileID: 247591043}
+  - component: {fileID: 459385461}
   m_Layer: 8
   m_Name: Player Character
   m_TagString: Player
@@ -838,6 +839,20 @@ MonoBehaviour:
   excludeTarget:
     serializedVersion: 2
     m_Bits: 256
+--- !u!114 &459385461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5917227459317105841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46536d91935cc452a9f552695ffec782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemPickupClip: {fileID: 8300000, guid: 0107881485be049089ce7a8ca3ed5089, type: 3}
+  lifeRemains: 3
 --- !u!1 &5920050932939478170
 GameObject:
   m_ObjectHideFlags: 0
@@ -1436,16 +1451,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7573107372154840281, guid: e0340c77c6f6e4b4abdcff780b356124,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7573107372154840280, guid: e0340c77c6f6e4b4abdcff780b356124,
-        type: 3}
-      propertyPath: targetToFollow
-      value: 
-      objectReference: {fileID: 1053341842}
     - target: {fileID: 7573107372154840279, guid: e0340c77c6f6e4b4abdcff780b356124,
         type: 3}
       propertyPath: muzzleFlashEffect
@@ -1456,6 +1461,11 @@ PrefabInstance:
       propertyPath: shellEjectEffect
       value: 
       objectReference: {fileID: 2558244589686355806}
+    - target: {fileID: 7573107372154840280, guid: e0340c77c6f6e4b4abdcff780b356124,
+        type: 3}
+      propertyPath: targetToFollow
+      value: 
+      objectReference: {fileID: 1053341842}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0340c77c6f6e4b4abdcff780b356124, type: 3}
 --- !u!4 &5199070504923220608 stripped

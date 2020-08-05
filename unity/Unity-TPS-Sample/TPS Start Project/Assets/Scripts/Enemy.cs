@@ -16,34 +16,34 @@ public class Enemy : LivingEntity
         AttackBegin,
         Attacking
     }
-    
+
     private State state;
-    
+
     private NavMeshAgent agent;
     private Animator animator;
 
     public Transform attackRoot;
     public Transform eyeTransform;
-    
+
     private AudioSource audioPlayer;
     public AudioClip hitClip;
     public AudioClip deathClip;
-    
+
     private Renderer skinRenderer;
 
     public float runSpeed = 10f;
     [Range(0.01f, 2f)] public float turnSmoothTime = 0.1f;
     private float turnSmoothVelocity;
-    
+
     public float damage = 30f;
     public float attackRadius = 2f;
     private float attackDistance;
-    
+
     public float fieldOfView = 50f;
     public float viewDistance = 50f;
     public float patrolSpeed = 3f;
     
-    public LivingEntity targetEntity;
+    [HideInInspector] public LivingEntity targetEntity;
     public LayerMask whatIsTarget;
 
 
